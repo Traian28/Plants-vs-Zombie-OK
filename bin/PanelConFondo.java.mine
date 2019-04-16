@@ -1,0 +1,24 @@
+import java.awt.*;
+
+import javax.swing.*;
+
+
+public class PanelConFondo extends JPanel{
+	//ATRIBUTOS DE INSTANCIA
+	protected JLabel fondo;
+	
+	//CONSTRUCTOR
+	public PanelConFondo(){
+		//this.setSize(800,600);
+		this.setOpaque(true);
+		this.setLayout(null);
+		
+		fondo=new JLabel();
+		fondo.setIcon(new ImageIcon("C:/Users/Traian/Downloads/images.jpg"));
+		fondo.setBounds(0,0,800,600);
+		
+		this.add(fondo);
+		
+	}
+
+}

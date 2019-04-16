@@ -1,0 +1,32 @@
+
+public class HiloZombie extends Thread{
+	//ATRIBUTOS DE INSTANCIA
+	protected Zombie zombie;
+	protected Juego juego;
+	
+	//CONSTRUCTOR
+	public HiloZombie(Juego j,Zombie z){
+		zombie=z;juego=j;
+	}
+	
+	//COMANDOS
+	public void run(){
+	//	zombie.bloquearZombie();
+		while(juego.sigueJuego()){
+			zombie.setX(zombie.getPosX()-zombie.getVelocidad());
+			if(zombie.getPosX()%100==0)
+				zombie.avanzar();
+			if(!zombie.usoAtaqueEspecial())
+				zombie.ataqueEspecial();
+			if(zombie.getPosX()<-10)
+				juego.setSigueJuego(false);
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}}
+	//	zombie.desbloquearZombie();
+	}
+
+}

@@ -1,0 +1,27 @@
+
+public class HiloZombie extends Thread{
+	//ATRIBUTOS DE INSTANCIA
+	protected Zombie zombie;
+	
+	//CONSTRUCTOR
+	public HiloZombie(Zombie z){
+		zombie=z;
+	}
+	
+	//COMANDOS
+	public void run(){
+		zombie.bloquearZombie();
+		while(zombie.getPosX()>0){
+			zombie.setX(zombie.getPosX()-zombie.getVelocidad());
+			if(zombie.getPosX()%100==0)
+				zombie.avanzar();
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}}
+		zombie.desbloquearZombie();
+	}
+
+}

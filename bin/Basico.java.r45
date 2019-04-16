@@ -1,0 +1,18 @@
+import javax.swing.ImageIcon;
+
+
+public class Basico extends Zombie{
+	//CONSTRUCTOR
+	public Basico(int X,int Y,Juego j){
+		super(100,10,25,X,Y,j);
+		grafica.setIcon(new ImageIcon("C:/Users/User/Desktop/zombie.gif"));
+	}
+	
+	//COMANDOS
+	public void ataqueEspecial(){
+		usoAtaqueEspecial=true;
+		
+	}
+
+
+}
